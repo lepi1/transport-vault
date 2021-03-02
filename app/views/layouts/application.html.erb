@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TransportVault</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Transport vault</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body>
+  <body style="background-color: #ededed">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="nav1">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
