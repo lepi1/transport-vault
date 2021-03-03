@@ -1,0 +1,9 @@
+<h1>Welcome</h1>
+
+<% if logged_in? %>
+  <h1> Vítej, <%= current_user.username %></h1>
+
+<%end%>
+
+<%= button_to "Přihlásit se", '/login', method: :get%>
+<%= button_to "Registrovat se", '/users/new', method: :get%>
