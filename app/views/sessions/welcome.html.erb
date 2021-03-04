@@ -1,15 +1,8 @@
 <div class="container">
   <% if logged_in? %>
-    <h1> Vítej, <%= current_user.username %></h1>
-
+    <h1> Vítej, <%= current_user.username %>, zde je krátký přehled záznamů.</h1>
+  <%else%>
+    <h1> Vítejte, bez přihlášení je k dispozici pouze omezený režim prohlížení.</h1>
   <%end%>
-  <div class="row">
-    <div class="col-sm">
-      <%= button_to "Přihlásit se", '/login', method: :get%>
-    </div>
-    <div class="col-sm">
-      <%= button_to "Registrovat se", '/users/new', method: :get%>    </div>
-    </div>
-  </div>
 </div>
 

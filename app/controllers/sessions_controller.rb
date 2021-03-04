@@ -7,12 +7,18 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:username])
 
     if @user && @user.authenticate(params[:password])
-      sessions[:user_id] = @user.id
-      redirect_to '/welcome'
+      session[:user_id] = @user.id
+
+      redirect_to root_path
     else
       flash[:danger] = 'User not found'
-      redirect_to '/login' unless @user
+      redirect_to '/login'
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to '/login'
   end
 
   def login; end
