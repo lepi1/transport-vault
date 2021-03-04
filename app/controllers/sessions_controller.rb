@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       sessions[:user_id] = @user.id
       redirect_to '/welcome'
     else
-      flash.alert = "User not found"
+      flash[:danger] = 'User not found'
       redirect_to '/login' unless @user
     end
   end

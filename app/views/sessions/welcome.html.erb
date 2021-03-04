@@ -1,9 +1,15 @@
-<h1>Welcome</h1>
+<div class="container">
+  <% if logged_in? %>
+    <h1> Vítej, <%= current_user.username %></h1>
 
-<% if logged_in? %>
-  <h1> Vítej, <%= current_user.username %></h1>
+  <%end%>
+  <div class="row">
+    <div class="col-sm">
+      <%= button_to "Přihlásit se", '/login', method: :get%>
+    </div>
+    <div class="col-sm">
+      <%= button_to "Registrovat se", '/users/new', method: :get%>    </div>
+    </div>
+  </div>
+</div>
 
-<%end%>
-
-<%= button_to "Přihlásit se", '/login', method: :get%>
-<%= button_to "Registrovat se", '/users/new', method: :get%>
